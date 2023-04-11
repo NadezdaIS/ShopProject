@@ -38,7 +38,7 @@ public class UserServices {
         return query.getResultList();
     }
 
-    public User getUserByEmailAndPassword(String email, String password) {
+    public static User getUserByEmailAndPassword(String email, String password) {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
 

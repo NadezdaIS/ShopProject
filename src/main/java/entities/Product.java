@@ -1,11 +1,14 @@
 package entities;
 
-import jakarta.persistence.*;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.annotations.Table;
 import org.hibernate.query.Query;
 import services.HibernateUtil;
+
+import javax.persistence.*;
+import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "products")

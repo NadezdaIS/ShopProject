@@ -1,7 +1,7 @@
 package entities;
 
-import jakarta.persistence.*;
-import org.hibernate.annotations.Table;
+import javax.persistence.*;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "users")
@@ -25,6 +25,14 @@ public class User {
 
     @Column(name = "role")
     private String role;
+
+    public User(String name, String email, String password, double balance, String role) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.balance = balance;
+        this.role = role;
+    }
 
     public int getId() {
         return id;
