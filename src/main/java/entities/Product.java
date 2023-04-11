@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.annotations.Table;
+import org.hibernate.query.Query;
+import services.HibernateUtil;
 
 @Entity
 @Table(name = "products")
@@ -21,6 +23,12 @@ public class Product {
 
     @Column(name = "price")
     private double price;
+
+    private SessionFactory sessionFactory;
+
+    public Product() {
+        this.sessionFactory = HibernateUtil.getSessionFactory();
+    }
 
     public int getId() {
         return id;
@@ -58,10 +66,10 @@ public class Product {
         this.name = name;
         this.quantity = quantity;
         this.price = price;
+        this.sessionFactory = HibernateUtil.getSessionFactory();
     }
 
     public int getQuantitySold(int productId) {
-        SessionFactory sessionFactory = null;
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
 
