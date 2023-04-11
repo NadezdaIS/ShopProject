@@ -39,12 +39,12 @@ public class ProductController {
 
     }
 
-    static void addNewProduct(ProductServices productServices) {
+    public static void addNewProduct(ProductServices productServices) {
 
-            if (currentUser.getRole() != "sales_representative") {
+            /*if (currentUser.getRole() != "sales_representative") {
                 System.out.println("Error: Only sales representatives can add new products.");
                 return;
-            }
+            }*/
 
             String name = UserController.getInput("Enter product name: ");
             int quantity = Integer.parseInt(UserController.getInput("Enter quantity: "));
